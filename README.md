@@ -12,6 +12,6 @@
 
 ![](src-img/tree-16.png) ![](src-img/tree-16.png) ![](src-img/tree-16.png) ![](src-img/tree-16.png) ![](src-img/tree-16.png)
 
-3.  Снегопад в меню
+3.  Снегопад в меню. _[установить](https://github.com/saby-customizer/user-script/raw/main/snow-in-menu.user.js)_
 
-![](src-img/snow.gif)
+![](src-img/snowflakes.png)
