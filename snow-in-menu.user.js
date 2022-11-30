@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          SABY Snow In Menu
 // @namespace     saby-customizer
-// @version       2.0.1
+// @version       2.0.2
 // @author        IgorNovozhilov
 // @description   Персональная настройка saby приложений для решения повседневных задач, и не только...
 // @homepage      https://saby-customizer.github.io
@@ -21,9 +21,14 @@
   const style = document.createElement('style')
   const sidebarCls = '.NavigationPanels-Sidebar'
   const snowflakeCnt = 100
+  let hideCount = Math.random() * snowflakeCnt / 2 ^ 0
 
   style.type = 'text/css'
   style.innerHTML = `
+    .NavigationPanels-Accordion__title_level-1::after, .NavigationPanels-Accordion__title_level-2_active::after {
+      background: none !important;
+    }
+
     .saby-customizer__snowflake-in-menu {
       position: absolute;
       width: 8px;
@@ -32,11 +37,14 @@
       border-radius: 50%;
       box-shadow: 0px 0px 4px white;
     }
+    .saby-customizer__snowflake-in-menu--hide {
+      display: none;
+    }
   `
 
   for (let index = 1; index <= snowflakeCnt; index++) {
-    const opacity = Math.random() / 2
-    const scale = Math.random()
+    const opacity = 0.1 + Math.random() * 0.4
+    const scale = 0.25 + Math.random() * 0.75
     const percent = 30 + Math.random() * 50
     const position = Math.random() * 200 ^ 0
     const positionS = Math.random() * 200 ^ 0
@@ -78,7 +86,19 @@
         } else {
           snowflakes[snowflakes.length - 1].after(snowflake)
         }
+      } else {
+        if (hideCount) {
+          snowflakes[Math.random() * (snowflakeCnt - 1) ^ 0].classList.add('saby-customizer__snowflake-in-menu--hide')
+          hideCount--
+        } else {
+          const hSnowflakes = sidebar.querySelectorAll('.saby-customizer__snowflake-in-menu--hide')
 
+          if (hSnowflakes.length) {
+            hSnowflakes[Math.random() * (hSnowflakes.length - 1) ^ 0].classList.remove('saby-customizer__snowflake-in-menu--hide')
+          } else {
+            hideCount = Math.random() * snowflakeCnt / 2 ^ 0
+          }
+        }
       }
     }, 1000)
   }
