@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          SABY Christmas Tree
 // @namespace     saby-customizer
-// @version       2.0.1
+// @version       2.0.2
 // @author        IgorNovozhilov
 // @description   Персональная настройка saby приложений для решения повседневных задач, и не только...
 // @homepage      https://saby-customizer.github.io
@@ -20,7 +20,6 @@
 (({ document }) => {
   const style = document.createElement('style')
 
-  style.id = 'saby-customizer__christmas-tree'
   style.type = 'text/css'
   style.innerHTML = `
     .NavigationPanels-Accordion__container {
@@ -31,7 +30,7 @@
     }
   `
 
-  document.head.appendChild(style)
+  document.head.append(style)
 })(
   // @ts-ignore
   unsafeWindow

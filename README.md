@@ -4,10 +4,14 @@
 
 #### Новогодняя тема
 
-1. Елочка под меню. _[установить](https://github.com/saby-customizer/user-script/raw/main/christmas-tree.user.js)_
+1.  Елочка под меню. _[установить](https://github.com/saby-customizer/user-script/raw/main/christmas-tree.user.js)_
 
 ![](src-img/christmas-tree-big.png)
 
-2. Елочки вместо стрелок `>` в меню. _[установить](https://github.com/saby-customizer/user-script/raw/main/christmas-tree-arrow.user.js)_
+2.  Елочки вместо стрелок `>` в меню. _[установить](https://github.com/saby-customizer/user-script/raw/main/christmas-tree-arrow.user.js)_
 
 ![](src-img/tree-16.png) ![](src-img/tree-16.png) ![](src-img/tree-16.png) ![](src-img/tree-16.png) ![](src-img/tree-16.png)
+
+3.  Снегопад в меню
+
+![](src-img/snow.gif)
