@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          SABY Christmas - Snow In Menu
 // @namespace     saby-customizer
-// @version       2.0.3
+// @version       2.0.4
 // @author        IgorNovozhilov
 // @description   Персональная настройка saby приложений для решения повседневных задач, и не только...
 // @homepage      https://saby-customizer.github.io
@@ -21,6 +21,7 @@
   const style = document.createElement('style')
   const sidebarCls = '.NavigationPanels-Sidebar'
   const snowflakeCnt = 100
+  const snowflakeTimer = 1000
   let hideCount = Math.random() * snowflakeCnt / 2 ^ 0
 
   style.type = 'text/css'
@@ -49,8 +50,8 @@
     const position = Math.random() * 200 ^ 0
     const positionS = Math.random() * 200 ^ 0
     const positionE = Math.random() * 200 ^ 0
-    const timeS = 30 + Math.random() * 20 ^ 0
-    const timeE = 20 + Math.random() * 30 ^ 0
+    const timeS = (document.body.clientHeight * 0.07 + Math.random() * document.body.clientHeight * 0.06) ^ 0
+    const timeE = (document.body.clientHeight * 0.06 + Math.random() * document.body.clientHeight * 0.07) ^ 0
     style.innerHTML += `
     .saby-customizer__snowflake-in-menu:nth-child(${index}) {
       opacity: ${opacity};
@@ -100,7 +101,7 @@
           }
         }
       }
-    }, 1000)
+    }, snowflakeTimer)
   }
 })(
   // @ts-ignore
