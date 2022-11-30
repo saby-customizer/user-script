@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name          SABY Snow In Menu
+// @name          SABY Christmas - Snow In Menu
 // @namespace     saby-customizer
-// @version       2.0.2
+// @version       2.0.3
 // @author        IgorNovozhilov
 // @description   Персональная настройка saby приложений для решения повседневных задач, и не только...
 // @homepage      https://saby-customizer.github.io

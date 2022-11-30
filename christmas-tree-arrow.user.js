@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name          SABY Christmas Tree Arrow
+// @name          SABY Christmas - Tree Arrow
 // @namespace     saby-customizer
 // @version       2.0.2
 // @author        IgorNovozhilov

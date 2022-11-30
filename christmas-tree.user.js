@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name          SABY Christmas Tree
+// @name          SABY Christmas - Tree
 // @namespace     saby-customizer
-// @version       2.0.3
+// @version       2.0.4
 // @author        IgorNovozhilov
 // @description   Персональная настройка saby приложений для решения повседневных задач, и не только...
 // @homepage      https://saby-customizer.github.io

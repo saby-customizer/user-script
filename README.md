@@ -12,6 +12,10 @@
 
 ![](src-img/tree-16.png) ![](src-img/tree-16.png) ![](src-img/tree-16.png) ![](src-img/tree-16.png) ![](src-img/tree-16.png)
 
-3.  Снегопад в меню. _[установить](https://github.com/saby-customizer/user-script/raw/main/snow-in-menu.user.js)_
+3.  Снегопад в меню. _[установить](https://github.com/saby-customizer/user-script/raw/main/christmas-snow-in-menu.user.js)_
 
 ![](src-img/snowflakes.png)
+
+4.  Птица в логотип _[установить](https://github.com/saby-customizer/user-script/raw/main/christmas-logo-bird.user.js)_
+
+![](src-img/penguin-32.png) <img src="src-img/owl-64.png" height="50%">
