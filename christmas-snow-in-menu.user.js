@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          SABY Christmas - Snow In Menu
 // @namespace     saby-customizer
-// @version       2.0.4
+// @version       2.0.5
 // @author        IgorNovozhilov
 // @description   Персональная настройка saby приложений для решения повседневных задач, и не только...
 // @homepage      https://saby-customizer.github.io
@@ -69,11 +69,9 @@
   `
   }
 
-
-
-  if (document.querySelector(sidebarCls)) {
-    document.head.append(style)
-    setInterval(() => {
+  document.head.append(style)
+  setInterval(() => {
+    if (document.querySelector(sidebarCls)) {
       const sidebar = document.querySelector(sidebarCls)
       const snowflakes = sidebar.querySelectorAll('.saby-customizer__snowflake-in-menu')
 
@@ -101,8 +99,9 @@
           }
         }
       }
-    }, snowflakeTimer)
-  }
+    }
+  }, snowflakeTimer)
+
 })(
   // @ts-ignore
   unsafeWindow
