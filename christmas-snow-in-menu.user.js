@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          SABY Christmas - Snow In Menu
 // @namespace     saby-customizer
-// @version       2.0.6
+// @version       2.0.7
 // @author        IgorNovozhilov
 // @description   Персональная настройка saby приложений для решения повседневных задач, и не только...
 // @homepage      https://saby-customizer.github.io
@@ -21,7 +21,11 @@
   const style = document.createElement('style')
   const sidebarCls = '.NavigationPanels-Sidebar'
   const snowflakeCnt = document.body.clientHeight * 0.15 ^ 0
+  const snowflakeStrt = snowflakeCnt * 0.05 || 1
   const snowflakeTimer = 1000
+  const brW = 200
+  const steps = document.body.clientHeight / (brW * 1.5) ^ 0
+  const step = 100 / steps
   let hideCount = Math.random() * snowflakeCnt / 2 ^ 0
 
   style.type = 'text/css'
@@ -43,27 +47,31 @@
     }
   `
 
-  for (let index = 1; index <= snowflakeCnt; index++) {
-    const opacity = 0.1 + Math.random() * 0.4
+  for (let snowID = 1; snowID <= snowflakeCnt; snowID++) {
     const scale = 0.25 + Math.random() * 0.75
-    const percent = 30 + Math.random() * 50
-    const position = Math.random() * 200 ^ 0
-    const positionS = Math.random() * 200 ^ 0
-    const positionE = Math.random() * 200 ^ 0
     const timeS = (document.body.clientHeight * 0.07 + Math.random() * document.body.clientHeight * 0.06) ^ 0
     const timeE = (document.body.clientHeight * 0.06 + Math.random() * document.body.clientHeight * 0.07) ^ 0
     style.innerHTML += `
-    .saby-customizer__snowflake-in-menu:nth-child(${index}) {
-      opacity: ${opacity};
-      transform: translate(${position}px, -8px) scale(${scale});
-      animation: saby-customizer__snowflake-in-menu-${index} ${timeS}s -${timeE}s linear infinite;
+    .saby-customizer__snowflake-in-menu:nth-child(${snowID}) {
+      opacity: ${0.1 + Math.random() * 0.4};
+      animation: saby-customizer__snowflake-in-menu-${snowID} ${timeS}s -${timeE}s linear infinite;
     }
-    @keyframes saby-customizer__snowflake-in-menu-${index} {
-      ${percent}% {
-        transform: translate(${positionS}px, ${percent}) scale(${scale});
+    @keyframes saby-customizer__snowflake-in-menu-${snowID}  {
+      from {
+        transform: translate(${Math.random() * brW ^ 0}px, -8px) scale(${scale});
       }
+    `
+    for (let idx = 0; idx < steps; idx++) {
+      const percent = step * idx + step / 3 + Math.random() * step / 3
+      style.innerHTML += `
+      ${percent}% {
+        transform: translate(${Math.random() * brW ^ 0}px, ${percent}vh) scale(${scale});
+      }
+    `
+    }
+    style.innerHTML += `
       to {
-        transform: translate(${positionE}px, 100vh) scale(${scale});
+        transform: translate(${Math.random() * brW ^ 0}px, 100vh) scale(${scale});
       }
     }
   `
@@ -81,7 +89,9 @@
         snowflake.classList.add('saby-customizer__snowflake-in-menu')
 
         if (snowflakes.length === 0) {
-          sidebar.prepend(snowflake)
+          for (let i = 0; i < snowflakeStrt; i++) {
+            sidebar.prepend(snowflake.cloneNode(true))
+          }
         } else {
           snowflakes[snowflakes.length - 1].after(snowflake)
         }
