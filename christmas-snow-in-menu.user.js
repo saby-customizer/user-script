@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          SABY Christmas - Snow In Menu
 // @namespace     saby-customizer
-// @version       2.0.7
+// @version       2.0.8
 // @author        IgorNovozhilov
 // @description   Персональная настройка saby приложений для решения повседневных задач, и не только...
 // @homepage      https://saby-customizer.github.io
@@ -48,30 +48,31 @@
   `
 
   for (let snowID = 1; snowID <= snowflakeCnt; snowID++) {
-    const scale = 0.25 + Math.random() * 0.75
     const timeS = (document.body.clientHeight * 0.07 + Math.random() * document.body.clientHeight * 0.06) ^ 0
     const timeE = (document.body.clientHeight * 0.06 + Math.random() * document.body.clientHeight * 0.07) ^ 0
     style.innerHTML += `
     .saby-customizer__snowflake-in-menu:nth-child(${snowID}) {
-      opacity: ${0.1 + Math.random() * 0.4};
       animation: saby-customizer__snowflake-in-menu-${snowID} ${timeS}s -${timeE}s linear infinite;
     }
     @keyframes saby-customizer__snowflake-in-menu-${snowID}  {
       from {
-        transform: translate(${Math.random() * brW ^ 0}px, -8px) scale(${scale});
+        opacity: ${0.1 + Math.random() * 0.4};
+        transform: translate(${Math.random() * brW ^ 0}px, -8px) scale(${0.25 + Math.random() * 0.75});
       }
     `
     for (let idx = 0; idx < steps; idx++) {
       const percent = step * idx + step / 3 + Math.random() * step / 3
       style.innerHTML += `
       ${percent}% {
-        transform: translate(${Math.random() * brW ^ 0}px, ${percent}vh) scale(${scale});
+        opacity: ${0.1 + Math.random() * 0.4};
+        transform: translate(${Math.random() * brW ^ 0}px, ${percent}vh) scale(${0.25 + Math.random() * 0.75});
       }
     `
     }
     style.innerHTML += `
       to {
-        transform: translate(${Math.random() * brW ^ 0}px, 100vh) scale(${scale});
+        opacity: ${0.1 + Math.random() * 0.4};
+        transform: translate(${Math.random() * brW ^ 0}px, 100vh) scale(${0.25 + Math.random() * 0.75});
       }
     }
   `
