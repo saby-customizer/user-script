@@ -19,10 +19,14 @@
 
 ![](src-img/snowflakes.png)
 
-4.  Птица в логотип. _[установить](https://github.com/saby-customizer/user-script/raw/main/christmas-logo-bird.user.js)_
+4.  Фон в виде снежинок в меню._[установить](https://github.com/saby-customizer/user-script/raw/main/christmas-big-snow-in-menu.user.js)_
+
+![](src-img/big-snow.png)
+
+5.  Птица в логотип. _[установить](https://github.com/saby-customizer/user-script/raw/main/christmas-logo-bird.user.js)_
 
 ![](src-img/penguin-32.png) <img src="src-img/owl-64.png" height="32px">
 
-5.  Шляпа Санты. _[установить](https://github.com/saby-customizer/user-script/raw/main/christmas-santa-hat.user.js)_
+6.  Шляпа Санты. _[установить](https://github.com/saby-customizer/user-script/raw/main/christmas-santa-hat.user.js)_
 
 ![](src-img/santa-hat-24.png)
