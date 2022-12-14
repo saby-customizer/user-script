@@ -19,7 +19,7 @@
 
 ![](src-img/snowflakes.png)
 
-4.  Фон в виде снежинок в меню._[установить](https://github.com/saby-customizer/user-script/raw/main/christmas-big-snow-in-menu.user.js)_
+4.  Фон в виде снежинок в меню. _[установить](https://github.com/saby-customizer/user-script/raw/main/christmas-big-snow-in-menu.user.js)_
 
 ![](src-img/big-snow.png)
 
