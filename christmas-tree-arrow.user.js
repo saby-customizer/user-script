@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          SABY Christmas - Tree Arrow
 // @namespace     saby-customizer
-// @version       2.0.2
+// @version       2.0.3
 // @author        IgorNovozhilov
 // @description   Персональная настройка saby приложений для решения повседневных задач, и не только...
 // @homepage      https://saby-customizer.github.io
@@ -30,10 +30,12 @@
       background-position-x: -2px;
     }
 
+    .NavigationPanels-Accordion__counter-background, .NavigationPanels-Accordion__counter-background.NavigationPanels-Counter__arrow {
+      background-color: transparent !important;
+    }
     .NavigationPanels-Counter__arrow>.NavigationPanels-Counter__arrow_icon polygon {
       display: none;
     }
-
     .NavigationPanels-Counter__arrow:hover>.NavigationPanels-Counter__arrow_icon {
       transform: rotate(25deg);
     }

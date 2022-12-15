@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          SABY Christmas - Big Snow In Menu
 // @namespace     saby-customizer
-// @version       2.0.1
+// @version       2.0.2
 // @author        IgorNovozhilov
 // @description   Персональная настройка saby приложений для решения повседневных задач, и не только...
 // @homepage      https://saby-customizer.github.io
@@ -31,9 +31,13 @@
   .NavigationPanels-Accordion__counter-background, .NavigationPanels-Accordion__counter-background.NavigationPanels-Counter__arrow {
     background-color: transparent !important;
   }
-  .NavigationPanels-Accordion__item_activeMenu>.NavigationPanels-Accordion__item_substrate,
-  .ws-is-hover .NavigationPanels-Accordion__item:hover>.NavigationPanels-Accordion__item_substrate {
+  .NavigationPanels-Accordion__item_substrate_accent,
+  .NavigationPanels-Accordion__item_activeMenu > .NavigationPanels-Accordion__item_substrate,
+  .ws-is-hover .NavigationPanels-Accordion__item:hover > .NavigationPanels-Accordion__item_substrate {
     opacity: .6;
+  }
+  .NavigationPanels-Accordion__item_activeMenu> .NavigationPanels-Accordion__item_substrate_accent + .NavigationPanels-Accordion__item_substrate {
+    opacity: 0;
   }
   .NavigationPanels-Sidebar__container {
     background-repeat: repeat-y;
