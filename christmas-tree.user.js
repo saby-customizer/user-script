@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          SABY Christmas - Tree
 // @namespace     saby-customizer
-// @version       2.0.6
+// @version       2.0.7
 // @author        IgorNovozhilov
 // @description   Персональная настройка saby приложений для решения повседневных задач, и не только...
 // @homepage      https://saby-customizer.github.io
@@ -26,6 +26,9 @@
       background: none !important;
     }
     .cloud-newYearPage .NavigationPanels-Accordion__container:before {
+      background: none !important;
+    }
+    .NavigationPanels-Accordion__tree {
       background: none !important;
     }
 
