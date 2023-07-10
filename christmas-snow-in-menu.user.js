@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          SABY Christmas - Snow In Menu
 // @namespace     saby-customizer
-// @version       2.0.10
+// @version       2.0.11
 // @author        IgorNovozhilov
 // @description   Персональная настройка saby приложений для решения повседневных задач, и не только...
 // @homepage      https://saby-customizer.github.io
@@ -19,7 +19,7 @@
 /* global unsafeWindow */
 (({ document }) => {
   const style = document.createElement('style')
-  const sidebarCls = '.NavigationPanels-Sidebar'
+  const sidebarCls = '.NavigationPanels-Sidebar__container'
   const snowflakeCnt = document.body.clientHeight * 0.15 ^ 0
   const snowflakeStrt = snowflakeCnt * 0.05 || 1
   const snowflakeTimer = 1000
@@ -27,6 +27,12 @@
   const steps = document.body.clientHeight / (brW * 1.5) ^ 0
   const step = 100 / steps
   let hideCount = Math.random() * snowflakeCnt / 2 ^ 0
+  let snowflakeCntInitial = 0
+
+  if (document.querySelector(sidebarCls)) {
+    const sidebar = document.querySelector(sidebarCls)
+    snowflakeCntInitial = sidebar.children.length
+  }
 
   style.type = 'text/css'
   style.innerHTML = `
@@ -62,10 +68,10 @@
     const timeS = (document.body.clientHeight * 0.07 + Math.random() * document.body.clientHeight * 0.06) ^ 0
     const timeE = (document.body.clientHeight * 0.06 + Math.random() * document.body.clientHeight * 0.07) ^ 0
     style.innerHTML += `
-    .saby-customizer__snowflake-in-menu:nth-child(${snowID}) {
-      animation: saby-customizer__snowflake-in-menu-${snowID} ${timeS}s -${timeE}s linear infinite;
+    .saby-customizer__snowflake-in-menu:nth-child(${snowID + snowflakeCntInitial}) {
+      animation: saby-customizer__snowflake-in-menu-${snowID + snowflakeCntInitial} ${timeS}s -${timeE}s linear infinite;
     }
-    @keyframes saby-customizer__snowflake-in-menu-${snowID}  {
+    @keyframes saby-customizer__snowflake-in-menu-${snowID + snowflakeCntInitial}  {
       from {
         opacity: ${0.1 + Math.random() * 0.4};
         transform: translate(${Math.random() * brW ^ 0}px, -8px) scale(${0.25 + Math.random() * 0.75});
@@ -102,7 +108,7 @@
 
         if (snowflakes.length === 0) {
           for (let i = 0; i < snowflakeStrt; i++) {
-            sidebar.prepend(snowflake.cloneNode(true))
+            sidebar.append(snowflake.cloneNode(true))
           }
         } else {
           snowflakes[snowflakes.length - 1].after(snowflake)
