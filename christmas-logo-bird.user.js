@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          SABY Christmas - Logo Bird
 // @namespace     saby-customizer
-// @version       2.0.1
+// @version       2.0.2
 // @author        IgorNovozhilov
 // @description   Персональная настройка saby приложений для решения повседневных задач, и не только...
 // @homepage      https://saby-customizer.github.io
@@ -46,8 +46,8 @@
       margin: -2px;
     }
 
-    .hint-helpButton__openAnimation {
-      transform: rotate(360deg) !important;
+    .hint-helpButton__icon > svg {
+      display: none;
     }
   `
 
