@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          SABY Christmas - Santa Hat
 // @namespace     saby-customizer
-// @version       2.0.2
+// @version       2.0.3
 // @author        IgorNovozhilov
 // @description   Персональная настройка saby приложений для решения повседневных задач, и не только...
 // @homepage      https://saby-customizer.github.io
@@ -30,12 +30,15 @@
       height: 18px;
       width: 18px;
       position: absolute;
-      top: 2px;
-      left: 60px;
-      transform: rotate(23deg);
+      top: -4px;
+      left: 8px;
+      transform: rotate(18deg);
     }
     .NavigationPanels-SchemeSelector .NavigationPanels-Sidebar__logo:after {
       display: none;
+    }
+    .NavigationPanels-Container.NavigationPanels-Logo {
+      overflow: visible;
     }
   `
 
